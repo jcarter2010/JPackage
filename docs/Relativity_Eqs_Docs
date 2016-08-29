@@ -1,0 +1,63 @@
+gamma = 1 / sqrt(1 - v^2 / c^2)
+  gamma = gamma factor used in scaling in special relativity, v = speed of the craft
+  If solving for:
+    gamma -- takes v
+    v -- takes gamma
+beta = v^2 / c^2
+  beta = velocity scaling factor in special relativity, v = speed of the craft
+  If solving for:
+    beta -- takes v
+    v -- takes beta
+t_prime = gamma t
+  t_prime = proper time dilation in special relativity, t = proper time between frames on the craft, gamma = scaling factor
+  If solving for:
+    t_prime -- takes t, gamma
+    t -- takes t_prime, gamma
+    gamma -- takes t_prime, t
+l_prime = l / gamma
+  l_prime = contracted proper length of a craft in special relativity, l = proper length, gamma = scaling factor
+  If solving for:
+    l_prime -- takes l, gamma
+    l -- takes l_prime, gamma
+    gamma -- takes l_prime, l
+x_prime = gamma(x - v t)
+  x_prime = contracted length of the craft, x = length of the craft in rest frame, t = time between frames, v = speed of the craft
+  If solving for:
+    x_prime -- takes x, v, t
+    x -- takes x_prime, v, t
+    v -- takes x_prime, x, t
+    t -- takse x_prime, x, v
+t_prime = gamma(t - v x / c^2)
+  t_prime = dilated time for the craft, t = time between frames, v = speed of the craft, x = length of the craft
+  If solving for:
+    t_prime -- takes t, v, x
+    t -- t_prime, v, x
+    v -- t_prime, t, x
+    x -- t_prime, t, v
+V_prime_par = (V_par - v) / (1 - (V_par v / c^2))
+  V_prime_par = added velocity in the parallel direction to movement, V_par = original parallel velocity, v = velocity to add
+  If sovling for:
+    V_prime_par -- takse V_par, v
+    V_par -- takes V_prime_par, v
+    v -- takes V_prime_par, V_par
+V_prime_perp = V_perp / (gamma(1 - (V_par v / c^2)))
+  V_prime_perp = added velocity in the perpendicular direction to movement, V_perp = original perpendicular velocity, V_par = original parallel velocity, v = velocity to add
+  If sovling for:
+    V_prime_perp -- takse V_perp, V_par, v
+    V_perp -- takes V_prime_perp, V_par, v
+    V_par -- takes V_prime_perp, V_perp, v
+z = v (sqrt(1 - beta))/(sqrt(1 + beta))
+  z = Doppler redshift in motion towards or away from observer, v = velocity of craft
+  If solving for:
+    z -- takes v
+    v -- takes z
+z = gamma v
+  z = Doppler redshift in motion perpendicular to observer, v = velocity of craft
+  If solving for:
+    z -- takes v
+    v -- takes z
+E = m c^2
+  E = energy from mass, m = mass of object
+  If solving for:
+    E -- takes m
+    m -- takse E
