@@ -1,12 +1,6 @@
 import math
 from JPMath import Vector2
 
-class Constants:
-
-    '''
-    There is nothing here
-    '''
-
 class Functions:
 
     def gcd(self, a, b):
@@ -320,9 +314,3 @@ class Ray:
 
     def __repr__(self):
         return self.__str__()
-
-class Equations:
-
-    '''
-    There is nothing here
-    '''

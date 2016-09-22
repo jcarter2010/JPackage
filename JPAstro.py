@@ -24,7 +24,7 @@ class Equations:
     global docs
 
     def __init__(self):
-        return(self.eqs = self.Load_Eqs()
+        self.eqs = self.Load_Eqs()
         self.docs = self.Load_Docs()
 
     def Load_Docs(self):
@@ -276,9 +276,9 @@ class Equations:
 
     def Redshift_Velocity_Relation_2(self, var, val1):
         'z = sqrt((c + v) / (c - v)) - 1'
-        if var = 'z': #val1 = v
+        if var == 'z': #val1 = v
             return(math.sqrt((Constants.c + val1) / (Constants.c - val1)) - 1)
-        if var = 'v' #val1 = z
+        if var == 'v' #val1 = z
             return((Constants.c * val1 ** 2) / (val1 * 2 - 2))
 
     def Time_Dilation_Velcity_Relation(self, var, val1, val2):

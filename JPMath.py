@@ -25,6 +25,28 @@ class Vector2:
         self.x = val1
         self.y = val2
 
+    def From_Spherical(self, r, phi, theta):
+        self.x = r * math.sin(theta) * math.cos(phi)
+        self.y = r * math.sin(theta) * math.sin(phi)
+        self.z = r * math.cos(theta)
+
+    def From_Cylindrical(self, s, phi, z):
+        self.x = s * math.cos(phi)
+        self.y = s * math.sin(phi)
+        self.z = z
+
+    def Get_Spherical(self):
+        r = math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+        phi = math.atan(self.y / self.x)
+        theta = math.acos(self.x / r)
+        return (r, phi, theta)
+
+    def Get_Cylindrical(self):
+        r = math.sqrt(self.x ** 2 + self.y ** 2)
+        phi = math.atan(self.y / self.x)
+        z = self.z
+        return (r, phi, z)
+
     def Rotate_Around_Point(self, origin, theta):
         point = [[self.x - origin.x], [self.y - origin.y], [0], [1]]
         rotation_matrix = Matrix.Create_From_Yaw_Pitch_Roll(0, 0, theta)
