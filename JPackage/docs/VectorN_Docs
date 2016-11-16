@@ -1,0 +1,37 @@
+VARIABLES
+---------
+
+  pts
+    The list of values to act as the coordinates of the vector
+
+CONSTRUCTOR
+--------
+
+(pts):
+  Creates the vector with pts being the list of coordinates
+
+FUNCITONS
+--------
+
+  Add(self, vect):
+    Adds each component of vect to the current vector
+
+  Subtract(vect):
+    Subtracts each component of vect from the current vector
+
+  Scalar_Mult(scalar):
+    Multiplies each component of the vector by a scalar value
+
+  Dot(vect):
+    Performs the dot product operation of the vector, x1*x2 + y1*y2 + ...
+  Length():
+    Returns the length of the vector
+
+  Equals(self, v2):
+    Determines if the vectors are equal to a precision of 0.001
+
+  Normalize(self):
+    Scales the vector so that its length is equal to 1
+
+  Distance(self, v2):
+    Returns the distance between the two points represented by the vectors
