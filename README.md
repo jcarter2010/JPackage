@@ -1,42 +1,47 @@
-JPackage
-
-----------------
-
+# JPackage
 
 Written by John Carter
 
+----------------
 
-This is a suite of physics python modules designed to make writing simulations easier and quicker than normal.
+This is a suite of physics Python modules designed to make writing simulations easier and quicker than normal.
 
+**Completed Modules:**
 
-TO DO:
++ JPAstro
+
++ JPRelativity
 
 ----------------
 
-Units for Relativity_Eqs_Docs
+**TO DO:**
 
-Write JPElecAndMag Constants
++ Units for Relativity_Eqs_Docs
 
-Write JPElecAndMag Equations
++ Write JPElecAndMag Constants
 
-Write JPMath 3D math component
++ Write JPElecAndMag Equations
 
-Write JPMath 1D math component
++ Write JPMath 3D math component
 
-Redo JPthermal Equations
++ Write JPMath 1D math component
 
-Write JPQuantum Constants
++ Redo JPthermal Equations
 
-Write JPQuantum Equations
++ Write JPQuantum Constants
 
-Write JPMechanics Constants
++ Write JPQuantum Equations
 
-Write JPMechanics Equations
++ Write JPMechanics Constants
 
-Write JPBiophysics
++ Write JPMechanics Equations
 
-JPNonEuclidean
++ Write JPBiophysics
 
-JPEuclidean
++ Write JPNonEuclidean
 
-Remove all unnecessary files
++ Write JPEuclidean
+
++ Finish JPMath Documentation
+
++ Remove all unnecessary files
