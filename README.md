@@ -2,15 +2,21 @@
 
 ###### Written by John Carter
 
+---
+
 ## About
 
 ---
 
-This is a suite of physics python modules designed to make writing simulations easier and quicker than normal.
+This is a suite of physics Python modules designed to make writing simulations easier and quicker than normal.
 
-## TO DO:
+**Completed Modules:**
 
----
++ JPAstro
+
++ JPRelativity
+
+**To Do**
 
 + Units for Relativity_Eqs_Docs
 
@@ -37,5 +43,3 @@ This is a suite of physics python modules designed to make writing simulations e
 + JPNonEuclidean
 
 + JPEuclidean
-
-+ Remove all unnecessary files
