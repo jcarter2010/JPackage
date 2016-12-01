@@ -2,6 +2,128 @@ import math
 import random
 import os
 
+'''
+This is not yet finished
+It will eventually differentiate a function and return the equation
+that is obtained from differentiating it
+'''
+
+class Differentiation:
+
+    global eq
+    global parts
+    global priorities
+    global operators
+
+    def __init__(self, eq):
+        self.eq = eq
+        self.differentiate_parens(eq)
+
+    def differentiate_parens(self, eq):
+        parts = eq.replace('(', '---').replace(')', '---').split('---')
+        parts = list(filter(None, parts))
+        print(parts)
+        for i in range(0, len(parts)):
+            part = parts[i]
+            parts[i] = self.differentiate_exps(part)
+            parts[i] = self.check_for_constant(parts[i])
+        print(parts)
+        return ' '.join(parts)
+
+    def check_for_constant(self, eq):
+        parts = eq.split(' ')
+        parts = list(filter(None, parts))
+        i = 0
+        while i < len(parts):
+            if parts[i].replace('.', '', 1).isdigit():
+                if i == 0:
+                    if parts[i + 1] in ['+', '-']:
+                        parts.pop(i)
+                elif i < len(parts) - 1:
+                    if parts[i - 1] in ['+', '-'] and parts[i + 1] in ['+', '-']:
+                        parts.pop(i - 1)
+                        parts.pop(i - 1)
+                else:
+                    if parts[i - 1] in ['+', '-']:
+                        parts.pop(i - 1)
+                        parts.pop(i - 1)
+            i = i + 1
+        return ' '.join(parts)
+
+    def differentiate_mult(self, eq):
+        parts = eq.split('*')
+        parts = list(filter(None, parts))
+        for i in range(0, len(parts)):
+            parts[i] = parts[i].strip()
+
+    def differentiate_exps(self, eq):
+        parts = eq.split(' ')
+        i = 0
+        while i < len(parts):
+            if parts[i] == '**':
+                parts[i] = self.exponent(' '.join(parts[i - 1:i + 2]))
+                parts.pop(i - 1)
+                parts.pop(i)
+                i = i - 2
+            i = i + 1
+        return(' '.join(parts))
+
+    def exponent(self, eq):
+        print(eq)
+        parts = eq.split('**')
+        for i in range(0, len(parts)):
+            parts[i] = parts[i].strip()
+        print(parts)
+        if parts[1].strip().replace('.', '', 1).isdigit():
+            parts[0] = parts[1] + ' * ' + parts[0]
+            parts[1] = str(float(parts[1]) - 1)
+            return '{} ** {}'.format(parts[0], parts[1])
+        else:
+            return parts[0]
+
+    '''
+    def differentiate(self, eq):
+        priority = 0
+        parts = eq.split(' ')
+        var = False
+        adjust = 0
+        for i in range(0, len(parts)):
+            try:
+                part = parts[i + adjust]
+                if var:
+                    if part == '**':
+                        c, e = self.exponent(float(parts[i + adjust + 1]))
+                        parts.insert(i + adjust - 1, '*')
+                        parts.insert(i + adjust - 1, c)
+                        parts[i + adjust + 3] = e
+                        adjust = adjust + 2
+                else:
+                    if i + adjust < len(parts) - 1:
+                        if part.replace('.','',1).isdigit() and parts[i + adjust + 1] in ['+', '-'] and parts[i + adjust - 1] in ['+', '-']:
+                            parts.pop(i + adjust + 1)
+                            parts.pop(i + adjust)
+                            parts[i + adjust - 1] = '+'
+                            adjust = adjust - 2
+                    else:
+                        if part.replace('.','',1).isdigit() and parts[i + adjust - 1] in ['+', '-']:
+                            parts.pop(i + adjust - 1)
+                            parts.pop(i + adjust - 1)
+                            parts[i + adjust - 1] = '+'
+                            adjust = adjust - 2
+                part = parts[i + adjust]
+
+                if not part.replace('.','',1).isdigit() and not part in self.operators:
+                    var = True
+                else:
+                    var = False
+            except:
+                break
+        print(parts)
+    '''
+
+    #def exponent(self, exp):
+    #    return (str(exp), str(exp - 1))
+
 class MonteCarloIntegration:
     # input equation in the form 'x * y + 6'
     # with spaces between each character
